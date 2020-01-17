@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<remote name="phh" fetch="https://github.com/phhusson/" />
+<remote name="pe" fetch="https://gitlab.com/PixelExperience/"  />
+
+<project path="vendor/hardware_overlay" name="vendor_hardware_overlay" remote="phh" revision="pie" />
+<project path="device/phh/treble" name="device_phh_treble" remote="phh" revision="android-10.0" />
+<project path="vendor/vndk" name="vendor_vndk" remote="phh" revision="android-10.0" />
+<project path="vendor/vndk-tests" name="vendor_vndk-tests" remote="phh" revision="master" />
+<project path="vendor/interfaces" name="vendor_interfaces" remote="phh" revision="pie" />
+
+<project path="vendor/magisk" name="vendor_magisk" remote="phh" revision="android-10.0" />
+
+<!-- exfat support -->
+<remote name="relan" fetch="https://github.com/relan/" />
+<project path="external/exfat" name="exfat" remote="relan" revision="master" />
+
+
+<!-- gapps (from PE, before apex) -->
+<project path="vendor/gapps/" name="vendor_gapps" revision="84ad3aa0967f969b58ee1edb01a9e21e5a621d1a" upstream="ten" remote="pe" />
+
+<!-- phh replacements -->
+<remove-project name="platform/build" />
+<project path="build/make" name="platform_build" remote="phh" revision="android-10.0.0_r25-phh">
+    <copyfile dest="Makefile" src="core/root.mk" />
+    <linkfile dest="build/CleanSpec.mk" src="CleanSpec.mk" />
+    <linkfile dest="build/buildspec.mk.default" src="buildspec.mk.default" />
+    <linkfile dest="build/core" src="core" />
+    <linkfile dest="build/envsetup.sh" src="envsetup.sh" />
+    <linkfile dest="build/target" src="target" />
+    <linkfile dest="build/tools" src="tools" />
+</project>
+
+<remove-project name="platform/system/core" />
+<project path="system/core" name="platform_system_core" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/system/sepolicy" />
+<project path="system/sepolicy" name="platform_system_sepolicy" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/frameworks/native" />
+<project path="frameworks/native" name="platform_frameworks_native" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/system/vold" />
+<project path="system/vold" name="platform_system_vold" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/system/bt" />
+<project path="system/bt" name="platform_system_bt" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/external/selinux" />
+<project path="external/selinux" name="platform_external_selinux" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/frameworks/base" />
+<project path="frameworks/base" name="platform_frameworks_base" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/frameworks/av" />
+<project path="frameworks/av" name="platform_frameworks_av" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/frameworks/opt/telephony" />
+<project path="frameworks/opt/telephony" name="platform_frameworks_opt_telephony" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/system/libvintf" />
+<project path="system/libvintf" name="platform_system_libvintf" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/system/netd" />
+<project path="system/netd" name="platform_system_netd" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/frameworks/opt/net/wifi" />
+<project path="frameworks/opt/net/wifi" name="platform_frameworks_opt_net_wifi" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/packages/apps/Settings" />
+<project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/packages/services/Telephony" />
+<project path="packages/services/Telephony" name="platform_packages_services_Telephony" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/bionic" />
+<project path="bionic" name="platform_bionic" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/bootable/recovery" />
+<project path="bootable/recovery" name="platform_bootable_recovery" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/system/bpf" />
+<project path="system/bpf" name="platform_system_bpf" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/external/skia" />
+<project path="external/skia" name="platform_external_skia" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/packages/apps/DeskClock" />
+<project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" remote="phh" revision="android-10.0.0_r25-phh" />
+
+<remove-project name="platform/packages/apps/Camera2" />
+<project path="packages/apps/Camera2" name="platform_packages_apps_Camera2" remote="phh" revision="android-10.0.0_r25-phh" />
+
+</manifest>
