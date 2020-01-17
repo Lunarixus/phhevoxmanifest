@@ -803,4 +803,7 @@
   <!-- Add all PixelExperience repos -->
   <include name="snippets/pixel.xml" />
 
+  <!-- Add phhusson GSI repos -->
+  <include name="snippets/phh.xml" />
+
 </manifest>
