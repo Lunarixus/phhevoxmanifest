@@ -791,6 +791,9 @@
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
+  <!-- Add phhusson GSI repos -->
+  <include name="snippets/phh.xml" />
+
   <!-- Remove unused AOSP repos -->
   <include name="snippets/remove.xml" />
 
@@ -802,8 +805,5 @@
 
   <!-- Add all PixelExperience repos -->
   <include name="snippets/pixel.xml" />
-
-  <!-- Add phhusson GSI repos -->
-  <include name="snippets/phh.xml" />
 
 </manifest>
